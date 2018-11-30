@@ -1,10 +1,9 @@
 module VGA_Top(
-  input logic PS2_Data, PS2_Clock, NES_Data, NES_Clock, IR_Data, IR_Clock,
+  input logic PS2_Data, PS2_Clock, NES_Data, NES_Clock, NES_Latch, IR_Data, IR_Clock,
   output logic [3:0] Red, Green, Blue,
   output logic h_sync, v_sync
 );
 
-  reg [7:0] PS2_decode, NES_decode, IR_decode;
   reg [4:0] PS2_Sig, NES_Sig, IR_Sig;
   reg [3:0] Direction_Sig;
   reg [0:0] ModeSwitch;
@@ -14,34 +13,20 @@ module VGA_Top(
   PS2_Decoder ps2dec(
     .Sig(PS2_Data),
     .clk(PS2_Clock),
-    .Out(PS2_decode)
+    .Out(PS2_Sig)
   );
 
   NES_Decoder NESdec(
     .Sig(NES_Data),
     .clk(NES_Clock),
-    .Out(NES_decode)
+    .Latch(NES_Latch),
+    .Out(NES_Sig)
   );
 
   IR_Decoder IRdec(
     .Sig(IR_Data),
     .clk(IR_Clock),
-    .Out(IR_decode)
-  );
-
-  Mux8to5 PS2mux(
-    .DataIn(PS2_decode),
-    .DataOut(PS2_Sig)
-  );
-
-  Mux8to5 NESmux(
-    .DataIn(NES_decode),
-    .DataOut(NES_Sig)
-  );
-
-  Mux8to5 IRmux(
-    .DataIn(IR_decode),
-    .DataOut(IR_Sig)
+    .Out(IR_Sig)
   );
 
   SignalMux sig(
