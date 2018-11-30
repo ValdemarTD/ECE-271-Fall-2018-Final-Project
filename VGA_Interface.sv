@@ -1,5 +1,5 @@
 module VGA_Interface(
-  input logic [0:0] Clock, ModeSwitch,
+  input logic [0:0] ModeSwitch,
   input logic [11:0] Color,
   output logic [3:0] Red, Green, Blue
 );
