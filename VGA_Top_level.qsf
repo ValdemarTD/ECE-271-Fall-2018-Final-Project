@@ -47,7 +47,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE ColorParser.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ImageGenerator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Mux8to5.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ObjectShifter.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ShiftReg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ShiftReg8.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ShiftReg11.sv
 set_global_assignment -name SYSTEMVERILOG_FILE SignalMux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA_Interface.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA_Top_level.sv

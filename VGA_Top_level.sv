@@ -4,6 +4,21 @@ module VGA_Top(
   output logic h_sync, v_sync
 );
 
+  timeunit 39ns;
+  timeprecision 100ps;
+  bit Clock_Sig=0;
+
+  always
+  begin
+    #delay Clock_Sig=~Clock_Sig;
+  end
+
+  initial
+  begin
+   #2ms;
+   $finish;
+  end
+
   reg [4:0] PS2_Sig, NES_Sig, IR_Sig;
   reg [3:0] Direction_Sig;
   reg [0:0] ModeSwitch;
