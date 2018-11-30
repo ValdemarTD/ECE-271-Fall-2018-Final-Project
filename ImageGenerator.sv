@@ -56,6 +56,7 @@ always_ff @(posedge clk)
       524 : begin
             y <= 0;
             v_sync <= 1;
+            end
       default : y <= y;
     endcase
 

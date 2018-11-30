@@ -12,6 +12,7 @@ module ObjectShifter(
   initial begin
     x = 400;
     y = 262;
+    end
 
   always_ff @(posedge Clock)
 
@@ -84,5 +85,4 @@ module ObjectShifter(
     x_pos <= x;
     y_pos <= y;
 
-  end
 endmodule

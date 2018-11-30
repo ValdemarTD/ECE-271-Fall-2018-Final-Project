@@ -63,6 +63,7 @@ always_ff @(negedge clk)
             endcase
 
           count <= 0;
+          end
       default: count <= count;
     Out <= ToOut;
   end

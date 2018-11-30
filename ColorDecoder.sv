@@ -35,7 +35,7 @@ always_ff @(*)
 
     1 : begin
         pins = Color;
-
+        end
     default : begin
       case(Color)
         0: pins = 4'b0001;

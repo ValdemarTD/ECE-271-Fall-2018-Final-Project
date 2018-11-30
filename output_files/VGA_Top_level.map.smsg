@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at Mux8to5.sv(21): always construct contains both blocking and non-blocking assignments File: C:/Projects/ECE 271/ECE-271-Fall-2018-Final-Project/Mux8to5.sv Line: 21
